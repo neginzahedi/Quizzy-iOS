@@ -1,24 +1,125 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Quizzy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="mal-3G-CrG">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="fOM-w5-XNN">
+                                <rect key="frame" x="20" y="44" width="374" height="818"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="score: 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8sa-N4-0Br">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="77"/>
+                                        <fontDescription key="fontDescription" name="TrebuchetMS-Bold" family="Trebuchet MS" pointSize="20"/>
+                                        <color key="textColor" red="0.89411771299999998" green="0.55294120309999995" blue="0.78039217000000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <nil key="highlightedColor"/>
+                                        <color key="shadowColor" red="0.98987193939999996" green="0.98853714790000002" blue="0.98887236940000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Qustion Text" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="war-oi-zZ9">
+                                        <rect key="frame" x="0.0" y="87" width="374" height="540"/>
+                                        <fontDescription key="fontDescription" name="TrebuchetMS-Bold" family="Trebuchet MS" pointSize="40"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="44c-fT-20F" userLabel="buttonView">
+                                        <rect key="frame" x="0.0" y="637" width="374" height="156"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OYs-1r-hcR">
+                                                <rect key="frame" x="0.0" y="0.0" width="374" height="70"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="70" id="EuM-Mw-fRv"/>
+                                                </constraints>
+                                                <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="True">
+                                                    <backgroundConfiguration key="background" cornerRadius="10" strokeWidth="5">
+                                                        <color key="backgroundColor" red="0.99215686319999996" green="0.99215686319999996" blue="0.99215686319999996" alpha="0.5" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <color key="strokeColor" red="0.86274516580000005" green="0.73350307800000003" blue="0.85296565199999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    </backgroundConfiguration>
+                                                    <fontDescription key="titleFontDescription" name="TrebuchetMS-Bold" family="Trebuchet MS" pointSize="30"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="answerSelected:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nv0-rw-Gos"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Aa-4f-d86">
+                                                <rect key="frame" x="0.0" y="86" width="374" height="70"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="70" id="Op0-do-tTY"/>
+                                                </constraints>
+                                                <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="False" cornerStyle="fixed">
+                                                    <backgroundConfiguration key="background" cornerRadius="10" strokeWidth="5">
+                                                        <color key="backgroundColor" red="0.99215686319999996" green="0.99215686319999996" blue="0.99215686319999996" alpha="0.52000000000000002" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <color key="strokeColor" red="0.86274516580000005" green="0.73350307802118597" blue="0.85296565200774255" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    </backgroundConfiguration>
+                                                    <fontDescription key="titleFontDescription" name="TrebuchetMS-Bold" family="Trebuchet MS" pointSize="30"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="answerSelected:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xfP-wd-MNW"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="q7N-1l-rWG">
+                                        <rect key="frame" x="0.0" y="803" width="374" height="15"/>
+                                        <color key="tintColor" systemColor="tintColor"/>
+                                        <rect key="contentStretch" x="0.0" y="0.0" width="1" height="0.94999999999999996"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="15" id="4f2-au-z2W"/>
+                                        </constraints>
+                                    </progressView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="mal-3G-CrG" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="5rZ-6L-t2V"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="fOM-w5-XNN" secondAttribute="bottom" id="894-Go-JT1"/>
+                            <constraint firstItem="mal-3G-CrG" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="8WH-s3-QP9"/>
+                            <constraint firstItem="fOM-w5-XNN" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="ZIc-yO-ZCm"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="fOM-w5-XNN" secondAttribute="trailing" id="qD5-c6-201"/>
+                            <constraint firstItem="mal-3G-CrG" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="rl4-St-kcu"/>
+                            <constraint firstAttribute="bottom" secondItem="mal-3G-CrG" secondAttribute="bottom" id="sYd-RT-CF4"/>
+                            <constraint firstItem="fOM-w5-XNN" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="wKX-aA-HMo"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="falseUIButton" destination="5Aa-4f-d86" id="If9-9a-dSx"/>
+                        <outlet property="progressUIProgressView" destination="q7N-1l-rWG" id="tfP-OP-O1q"/>
+                        <outlet property="questionUILabel" destination="war-oi-zZ9" id="1Wt-g5-6au"/>
+                        <outlet property="scoreUILabel" destination="8sa-N4-0Br" id="p2X-vs-cUk"/>
+                        <outlet property="trueUIButton" destination="OYs-1r-hcR" id="cFq-xL-wtR"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="18.840579710144929" y="93.75"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="background" width="1242" height="2688"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="tintColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>
