@@ -22,16 +22,20 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="fOM-w5-XNN">
                                 <rect key="frame" x="20" y="44" width="374" height="818"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="score: 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8sa-N4-0Br">
-                                        <rect key="frame" x="0.0" y="0.0" width="374" height="77"/>
-                                        <fontDescription key="fontDescription" name="TrebuchetMS-Bold" family="Trebuchet MS" pointSize="20"/>
-                                        <color key="textColor" red="0.89411771299999998" green="0.55294120309999995" blue="0.78039217000000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                        <nil key="highlightedColor"/>
-                                        <color key="shadowColor" red="0.98987193939999996" green="0.98853714790000002" blue="0.98887236940000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Qustion Text" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="war-oi-zZ9">
-                                        <rect key="frame" x="0.0" y="87" width="374" height="540"/>
-                                        <fontDescription key="fontDescription" name="TrebuchetMS-Bold" family="Trebuchet MS" pointSize="40"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UCM-WA-qoD">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="80.5"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="score:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A7X-JZ-fs8">
+                                                <rect key="frame" x="0.0" y="0.0" width="374" height="80.5"/>
+                                                <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="20"/>
+                                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Qustion Text" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="war-oi-zZ9">
+                                        <rect key="frame" x="0.0" y="90.5" width="374" height="536.5"/>
+                                        <fontDescription key="fontDescription" name="Galvji-Bold" family="Galvji" pointSize="40"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -48,9 +52,9 @@
                                                 <buttonConfiguration key="configuration" style="plain" title="True">
                                                     <backgroundConfiguration key="background" cornerRadius="10" strokeWidth="5">
                                                         <color key="backgroundColor" red="0.99215686319999996" green="0.99215686319999996" blue="0.99215686319999996" alpha="0.5" colorSpace="custom" customColorSpace="displayP3"/>
-                                                        <color key="strokeColor" red="0.86274516580000005" green="0.73350307800000003" blue="0.85296565199999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <color key="strokeColor" red="0.6784313917" green="0.2352941036" blue="0.23921570180000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     </backgroundConfiguration>
-                                                    <fontDescription key="titleFontDescription" name="TrebuchetMS-Bold" family="Trebuchet MS" pointSize="30"/>
+                                                    <fontDescription key="titleFontDescription" name="Futura-Bold" family="Futura" pointSize="30"/>
                                                 </buttonConfiguration>
                                                 <connections>
                                                     <action selector="answerSelected:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nv0-rw-Gos"/>
@@ -66,9 +70,9 @@
                                                 <buttonConfiguration key="configuration" style="plain" title="False" cornerStyle="fixed">
                                                     <backgroundConfiguration key="background" cornerRadius="10" strokeWidth="5">
                                                         <color key="backgroundColor" red="0.99215686319999996" green="0.99215686319999996" blue="0.99215686319999996" alpha="0.52000000000000002" colorSpace="custom" customColorSpace="displayP3"/>
-                                                        <color key="strokeColor" red="0.86274516580000005" green="0.73350307802118597" blue="0.85296565200774255" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <color key="strokeColor" red="0.6784313917" green="0.2352941036" blue="0.23921570180000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     </backgroundConfiguration>
-                                                    <fontDescription key="titleFontDescription" name="TrebuchetMS-Bold" family="Trebuchet MS" pointSize="30"/>
+                                                    <fontDescription key="titleFontDescription" name="Futura-Bold" family="Futura" pointSize="30"/>
                                                 </buttonConfiguration>
                                                 <connections>
                                                     <action selector="answerSelected:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xfP-wd-MNW"/>
@@ -78,7 +82,7 @@
                                     </stackView>
                                     <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="q7N-1l-rWG">
                                         <rect key="frame" x="0.0" y="803" width="374" height="15"/>
-                                        <color key="tintColor" systemColor="tintColor"/>
+                                        <color key="tintColor" systemColor="labelColor"/>
                                         <rect key="contentStretch" x="0.0" y="0.0" width="1" height="0.94999999999999996"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="15" id="4f2-au-z2W"/>
@@ -104,7 +108,7 @@
                         <outlet property="falseUIButton" destination="5Aa-4f-d86" id="If9-9a-dSx"/>
                         <outlet property="progressUIProgressView" destination="q7N-1l-rWG" id="tfP-OP-O1q"/>
                         <outlet property="questionUILabel" destination="war-oi-zZ9" id="1Wt-g5-6au"/>
-                        <outlet property="scoreUILabel" destination="8sa-N4-0Br" id="p2X-vs-cUk"/>
+                        <outlet property="scoreUILabel" destination="A7X-JZ-fs8" id="S2n-kp-Xnm"/>
                         <outlet property="trueUIButton" destination="OYs-1r-hcR" id="cFq-xL-wtR"/>
                     </connections>
                 </viewController>
@@ -115,11 +119,11 @@
     </scenes>
     <resources>
         <image name="background" width="1242" height="2688"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="tintColor">
-            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

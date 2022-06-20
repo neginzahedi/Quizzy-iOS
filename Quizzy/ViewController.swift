@@ -29,7 +29,7 @@ class ViewController: UIViewController {
     ]
     
     var questionNumber = 0
-        
+    var score = 0
     // only once load
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,6 +47,8 @@ class ViewController: UIViewController {
         // if user's answer is correct set color of answer to greem if not red
         if userAnswer == rightAnswer{
             sender.tintColor = UIColor.green
+            score += 1
+            scoreUILabel.text = "score = \(score)"
         }else{
             sender.tintColor = UIColor.red
         }
@@ -56,6 +58,8 @@ class ViewController: UIViewController {
             questionNumber += 1
         } else{
             questionNumber = 0
+            score = 0
+            scoreUILabel.text = "score = \(score)"
         }
         
         Timer.scheduledTimer(timeInterval: 0.2, target: self, selector: #selector(updateQuestion), userInfo: nil, repeats: false)
@@ -70,6 +74,8 @@ class ViewController: UIViewController {
         questionUILabel.text = quiz[questionNumber].text
         trueUIButton.tintColor = UIColor.black
         falseUIButton.tintColor = UIColor.black
+        progressUIProgressView.progress = Float(questionNumber+1)/Float(quiz.count)
+        
     }
 }
 
