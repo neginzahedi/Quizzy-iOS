@@ -23,24 +23,24 @@
                                 <rect key="frame" x="20" y="44" width="374" height="818"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UCM-WA-qoD">
-                                        <rect key="frame" x="0.0" y="0.0" width="374" height="80.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="63"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="score:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A7X-JZ-fs8">
-                                                <rect key="frame" x="0.0" y="0.0" width="374" height="80.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="374" height="63"/>
                                                 <fontDescription key="fontDescription" name="Futura-Bold" family="Futura" pointSize="20"/>
                                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
                                     </stackView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Qustion Text" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="war-oi-zZ9">
-                                        <rect key="frame" x="0.0" y="90.5" width="374" height="536.5"/>
-                                        <fontDescription key="fontDescription" name="Galvji-Bold" family="Galvji" pointSize="40"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Qustion Text" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="6" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="war-oi-zZ9">
+                                        <rect key="frame" x="0.0" y="73" width="374" height="468"/>
+                                        <fontDescription key="fontDescription" name="Galvji-Bold" family="Galvji" pointSize="30"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="44c-fT-20F" userLabel="buttonView">
-                                        <rect key="frame" x="0.0" y="637" width="374" height="156"/>
+                                        <rect key="frame" x="0.0" y="551" width="374" height="242"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OYs-1r-hcR">
                                                 <rect key="frame" x="0.0" y="0.0" width="374" height="70"/>
@@ -49,7 +49,7 @@
                                                 </constraints>
                                                 <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" title="True">
+                                                <buttonConfiguration key="configuration" style="plain" title="choice one">
                                                     <backgroundConfiguration key="background" cornerRadius="10" strokeWidth="5">
                                                         <color key="backgroundColor" red="0.99215686319999996" green="0.99215686319999996" blue="0.99215686319999996" alpha="0.5" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <color key="strokeColor" red="0.6784313917" green="0.2352941036" blue="0.23921570180000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -57,17 +57,35 @@
                                                     <fontDescription key="titleFontDescription" name="Futura-Bold" family="Futura" pointSize="30"/>
                                                 </buttonConfiguration>
                                                 <connections>
-                                                    <action selector="answerSelected:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nv0-rw-Gos"/>
+                                                    <action selector="answerSelected:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1lj-Nw-shw"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bTa-mZ-ayf">
+                                                <rect key="frame" x="0.0" y="86" width="374" height="70"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="70" id="Ms8-V7-Qp7"/>
+                                                </constraints>
+                                                <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="choice two">
+                                                    <backgroundConfiguration key="background" cornerRadius="10" strokeWidth="5">
+                                                        <color key="backgroundColor" red="0.99215686319999996" green="0.99215686319999996" blue="0.99215686319999996" alpha="0.5" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        <color key="strokeColor" red="0.6784313917" green="0.2352941036" blue="0.23921570180000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    </backgroundConfiguration>
+                                                    <fontDescription key="titleFontDescription" name="Futura-Bold" family="Futura" pointSize="30"/>
+                                                </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="answerSelected:" destination="BYZ-38-t0r" eventType="touchUpInside" id="AhQ-CS-Gsq"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Aa-4f-d86">
-                                                <rect key="frame" x="0.0" y="86" width="374" height="70"/>
+                                                <rect key="frame" x="0.0" y="172" width="374" height="70"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="70" id="Op0-do-tTY"/>
                                                 </constraints>
                                                 <color key="tintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" title="False" cornerStyle="fixed">
+                                                <buttonConfiguration key="configuration" style="plain" title="choice three" cornerStyle="fixed">
                                                     <backgroundConfiguration key="background" cornerRadius="10" strokeWidth="5">
                                                         <color key="backgroundColor" red="0.99215686319999996" green="0.99215686319999996" blue="0.99215686319999996" alpha="0.52000000000000002" colorSpace="custom" customColorSpace="displayP3"/>
                                                         <color key="strokeColor" red="0.6784313917" green="0.2352941036" blue="0.23921570180000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -75,7 +93,7 @@
                                                     <fontDescription key="titleFontDescription" name="Futura-Bold" family="Futura" pointSize="30"/>
                                                 </buttonConfiguration>
                                                 <connections>
-                                                    <action selector="answerSelected:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xfP-wd-MNW"/>
+                                                    <action selector="answerSelected:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ggf-te-q4r"/>
                                                 </connections>
                                             </button>
                                         </subviews>
@@ -105,11 +123,12 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="falseUIButton" destination="5Aa-4f-d86" id="If9-9a-dSx"/>
+                        <outlet property="choiceOneUIButton" destination="OYs-1r-hcR" id="QhU-fQ-0Fy"/>
+                        <outlet property="choiceThreeUIButton" destination="5Aa-4f-d86" id="ie1-jr-Xdq"/>
+                        <outlet property="choiceTwoUIButton" destination="bTa-mZ-ayf" id="Vgu-da-cwc"/>
                         <outlet property="progressUIProgressView" destination="q7N-1l-rWG" id="tfP-OP-O1q"/>
                         <outlet property="questionUILabel" destination="war-oi-zZ9" id="1Wt-g5-6au"/>
                         <outlet property="scoreUILabel" destination="A7X-JZ-fs8" id="S2n-kp-Xnm"/>
-                        <outlet property="trueUIButton" destination="OYs-1r-hcR" id="cFq-xL-wtR"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
