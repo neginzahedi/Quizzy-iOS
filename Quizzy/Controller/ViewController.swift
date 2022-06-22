@@ -10,13 +10,13 @@
 import UIKit
 
 class ViewController: UIViewController {
-    // score UILabel
+    // score label
     @IBOutlet weak var scoreUILabel: UILabel!
     
-    // Question Text UILable
+    // Question Text label
     @IBOutlet weak var questionUILabel: UILabel!
     
-    //ProgressView
+    // ProgressView
     @IBOutlet weak var progressUIProgressView: UIProgressView!
     
     // multiple choices UIButton
@@ -27,59 +27,75 @@ class ViewController: UIViewController {
     // object of type QuizzLogic structure
     var quizzLogic = QuizzLogic()
     
+    // keep correct answer
     var score = 0
-    
+
     // run only once app load
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        updateQuestion()
+        updateUI()
     }
     
     @IBAction func answerSelected(_ sender: UIButton) {
         
         // user's answer
         let userAnswer = sender.titleLabel?.text
-        // correct answer
+        
+        // check user's answer with correct answer
         if quizzLogic.checkAnswer(answer: userAnswer!){
             sender.tintColor = UIColor.green
-            score += 1
-            scoreUILabel.text = "score = \(score)"
+            self.score += 1
+            scoreUILabel.text = "score = \(self.score)"
         } else{
             sender.tintColor = UIColor.red
         }
         
+        // update next question number
         quizzLogic.updateQuestionNumber()
         
-        
-        Timer.scheduledTimer(timeInterval: 0.2, target: self, selector: #selector(updateQuestion), userInfo: nil, repeats: false)
-    
+        if quizzLogic.questionNumber == 0{
+            self.score = 0
+            scoreUILabel.text = "score = \(self.score)"
+        }
+        // timer to only show answer for 2 seconds
+        Timer.scheduledTimer(timeInterval: 0.2, target: self, selector: #selector(updateUI), userInfo: nil, repeats: false)
     }
     
     
     
-    // reterives next question from array
-    @objc func updateQuestion(){
+    // reterives next question from array and update view
+    @objc func updateUI(){
+        // update question text
         questionUILabel.text = quizzLogic.getQuestionText()
+        
+        // update progress view
         progressUIProgressView.progress = quizzLogic.calculateProgressBar()
         
+        // update multiplechoises
         choiceOneUIButton.setTitle(quizzLogic.getChoiceOne(), for: .normal)
         choiceTwoUIButton.setTitle(quizzLogic.getChoiceTwo(), for: .normal)
         choiceThreeUIButton.setTitle(quizzLogic.getChoiceThree(), for: .normal)
         
+        // set tint color back to default
         choiceOneUIButton.tintColor = UIColor.black
         choiceTwoUIButton.tintColor = UIColor.black
         choiceThreeUIButton.tintColor = UIColor.black
         
-        if progressUIProgressView.progress == 1{
-            questionUILabel.text = quizzLogic.showResult(score: score)
+        // when quizz finished, update view to start over
+        if progressUIProgressView.progress == 1 {
+            questionUILabel.text = quizzLogic.showResult(score: self.score)
             choiceOneUIButton.isHidden = true
             choiceTwoUIButton.isHidden = true
-            choiceThreeUIButton.setTitle("start over", for: .normal)
+            scoreUILabel.isHidden = true
         } else{
             choiceOneUIButton.isHidden = false
             choiceTwoUIButton.isHidden = false
+            scoreUILabel.isHidden = false
+
         }
+        
+       
     }
 }
 

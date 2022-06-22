@@ -22,12 +22,22 @@ struct QuizzLogic{
         Question(text: "What country kicked out Canada's ambassador after the Canadian government called for the release of two dissidents in 2018?", choiceOne: "China",choiceTwo: "Peru",choiceThree: "Saudi Arabia", answer: "Saudi Arabia"),
         Question(text: "About what percent of Canadians speak French as a first language?", choiceOne: "9",choiceTwo: "22",choiceThree: "49", answer: "22"),
         Question(text: "About what percent of Canadian residents were born in a different country?", choiceOne: "3",choiceTwo: "11",choiceThree: "22", answer: "22"),
-        Question(text: "What is the capital of Canada?", choiceOne: "Montreal",choiceTwo: "Ottawa",choiceThree: "Toronto", answer: "Ottawa") ]
+        Question(text: "What is depicted on the front of a Canadian $1 coin?", choiceOne: "a City",choiceTwo: "a Loon",choiceThree: "a Maple Leaf", answer: "a Loon"),
+        Question(text: "result", choiceOne: "hide",choiceTwo: "hide",choiceThree: "startover", answer: "hide"),
+    ]
     
     var questionNumber = 0
     
-    // keeps score of true answers
-    var score = 0
+    // return text of next question
+    func getQuestionText() -> String{
+        return quiz[self.questionNumber].text
+    }
+    
+    // calculate and return progressbar percentage
+    func calculateProgressBar() -> Float{
+        return Float(self.questionNumber+1)/Float(quiz.count)
+    }
+    
     
     // check user's answer and return true or false
     func checkAnswer(answer userAnswer:String) -> Bool{
@@ -41,22 +51,12 @@ struct QuizzLogic{
     
     // update question number to go next question
     mutating func updateQuestionNumber(){
-        if questionNumber + 1 < quiz.count{
-            questionNumber += 1
+        if self.questionNumber + 1 < quiz.count{
+            self.questionNumber += 1
         } else{
-            
-            questionNumber = 0
+
+            self.questionNumber = 0
         }
-    }
-    
-    //    mutating func updateScore() -> Int{
-    //        self.score += 1
-    //        return score
-    //    }
-    
-    // return text of next question
-    func getQuestionText() -> String{
-        return quiz[questionNumber].text
     }
     
     func getChoiceOne() -> String{
@@ -70,12 +70,13 @@ struct QuizzLogic{
         return quiz[questionNumber].choiceThree
     }
     
-    // calculate and return progressbar percentage
-    func calculateProgressBar() -> Float{
-        return Float(questionNumber+1)/Float(quiz.count)
-    }
     
     func showResult(score: Int)->String{
-        return "your score is \(score)"
+        if 0...5 ~= score {
+            return "You should try hard... You scored \(score)/10"
+        } else{
+        return "Well Done! You scored \(score)/10!"
+        }
     }
+    
 }
